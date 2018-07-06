@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,16 +9,47 @@
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <script src="main.js"></script>
 </head>
+
 <body>
-    <h1>MARQUEE SALAD</h1>
-    <form id="form">
-        <h3>Marquee to be taken down</h3>
-        <textarea id="old-marquee"></textarea>
-        <h3>Marquee to be put up</h3>
-        <textarea id="new-marquee"></textarea>
-        <button id="button">SALAD</button>
-    </form>
-    <div id="letter-zone"></div>
-    <script type="text/javascript" src="app.js"></script>
+    <div class="page-wrapper">
+        <h1 class="header-title">MARQUEE SALAD</h1>
+        <p>Marquee salad is here to help you know which letters to pull when putting up a new marquee. Simply type in your current
+            marquee and the one you want to put up in the text boxes. Then hit "SALAD!" and you'll get a list of how many
+            of each new letter you need.</p>
+        <form id="form">
+            <h3>Marquee to be taken down</h3>
+            <textarea id="old-marquee"></textarea>
+            <h3 class="arrowd">&darr;</h3>
+            <h3>Marquee to be put up</h3>
+            <textarea id="new-marquee"></textarea>
+            <button id="button">SALAD!</button>
+        </form>
+        <div class="letter-zone-wrapper">
+            <div id="word-zone"></div>
+            <div id="letter-zone"></div>
+        </div>
+        <script type="text/javascript" src="app.js"></script>
+    </div>
+
+    <footer>
+        <div>
+            <p>&copy; 2018</p>
+        </div>
+        <div>
+            <p>made using vanilla javascript by Timothy Morrise </p>
+        </div>
+        <div class="glyphs-wrapper">
+            <a href="mailto:timothy.morrise@gmail.com">
+                <div class="footer-link" id="email"></div>
+            </a>
+            <a href="https://twitter.com/cyberPrior">
+                <div class="footer-link" id="twitter"></div>
+            </a>
+            <a href="https://github.com/timothymorrise">
+                <div class="footer-link" id="github"></div>
+            </a>
+        </div>
+    </footer>
 </body>
+
 </html>

@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css?family=Pragati+Narrow:700');
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body {
+    align-items: center;
     display: flex;
     flex-direction: column;
     font-family: 'Pragati Narrow', sans-serif;
+}
+
+footer {
+    align-items: center;
+    border-top: 5px solid black;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 form {
@@ -12,10 +26,75 @@ form {
 }
 
 form > button {
-    width: 100px;
+    margin: 14px;
+    align-self: center;
+    font-size: 1.5em;
+    height: 50px;
+    width: 300px;
+}
+
+form > h3 {
+    margin-top: 5px;
 }
 
 textarea {
     height: 100px;
-    width: 200px
+    width: 450px
+}
+
+.arrowd {
+    align-self: center;
+    font-size: 3em;
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.footer-link {
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 100px;
+    width: 100px;
+}
+
+.header-title {
+    font-size: 4em
+}
+
+.glyphs-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 400px;   
+}
+
+.letter-zone-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.page-wrapper {
+    display: flex;
+    width: 500px;
+    min-height: 1000px;
+    flex-direction: column;
+}
+
+#letter-zone {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 550px;
+}
+
+#email {
+    background-image: url("/shared//email-icon.png");
+}
+
+#github {
+    background-image: url("/shared//github.png");
+}
+
+#twitter {
+    background-image: url("/shared/twitter-1.png");
 }
