@@ -48,28 +48,30 @@ let letters = { ...defaultLetters }
 
 button.onclick = function (e) {
     e.preventDefault();
-    if (oldMarquee.value && newMarquee.value) {
+    let text1 = oldMarquee.value.toUpperCase().replace(/[^A-Z]/g, '');
+    let text2 = newMarquee.value.toUpperCase().replace(/[^A-Z]/g, '');
+    for (let i = 0; i < text2.length; i++) {
+        letters[text2[i]]++
+    }
+    for (i = 0; i < text1.length; i++) {
+        letters[text1[i]]--
+    }
+    let insertTags = ""
+    for (var key in letters) {
+        if (letters[key] > 0) {
+            insertTags += `<h1>${key} : ${String(letters[key])}</h1>`
+        }
+    }
+    if (oldMarquee.value && newMarquee.value && insertTags !== "") {
         letterZone.innerHTML = ""
-        let text1 = oldMarquee.value.toUpperCase().replace(/[^A-Z]/g, '');
-        let text2 = newMarquee.value.toUpperCase().replace(/[^A-Z]/g, '');
-        for (let i = 0; i < text2.length; i++) {
-            letters[text2[i]]++
-        }
-        for (i = 0; i < text1.length; i++) {
-            letters[text1[i]]--
-        }
         wordZone.innerHTML = `<h3>${oldMarquee.value.toUpperCase()}</h3>
         <h3>&darr;</h3>
         <h3>${newMarquee.value.toUpperCase()}</h3>`
-        let insertTags = ""
-        for (var key in letters) {
-            if (letters[key] > 0) {
-                insertTags += `<h1>${key} : ${String(letters[key])}</h1>`
-            }
-        }
         letterZone.innerHTML = insertTags
         oldMarquee.value = ""
         newMarquee.value = ""
         letters = { ...defaultLetters }
+    } else if (oldMarquee.value && newMarquee.value && insertTags === "") {
+        wordZone.innerHTML = "<h3>No new letters needed!</h3>"
     }
 }
