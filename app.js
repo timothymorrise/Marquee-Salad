@@ -29,6 +29,7 @@ let defaultLetters = {
     L: 0,
     M: 0,
     N: 0,
+    O: 0,
     P: 0,
     Q: 0,
     R: 0,
