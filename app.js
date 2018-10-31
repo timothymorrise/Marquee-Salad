@@ -40,7 +40,16 @@ let defaultLetters = {
     W: 0,
     X: 0,
     Y: 0,
-    Z: 0
+    Z: 0,
+    1: 0,
+    2: 0,
+    3: 0,
+    4: 0,
+    5: 0,
+    6: 0,
+    7: 0,
+    8: 0,
+    9: 0 
 }
 
 let letters = { ...defaultLetters }
@@ -49,8 +58,8 @@ let letters = { ...defaultLetters }
 
 button.onclick = function (e) {
     e.preventDefault();
-    let text1 = oldMarquee.value.toUpperCase().replace(/[^A-Z]/g, '');
-    let text2 = newMarquee.value.toUpperCase().replace(/[^A-Z]/g, '');
+    let text1 = oldMarquee.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
+    let text2 = newMarquee.value.toUpperCase().replace(/[^A-Z0-9]/g, '');
     for (let i = 0; i < text2.length; i++) {
         letters[text2[i]]++
     }
